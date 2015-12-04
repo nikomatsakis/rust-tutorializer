@@ -33,8 +33,11 @@ impl Shape {
         match *self {
             Shape::Circle(_, radius) =>
                 radius * radius * PI,
-            Shape::Rectangle { corner1, corner2 } =>
-                (corner2.x - corner1.x) * (corner2.y - corner1.y),
+            Shape::Rectangle { corner1, corner2 } => {
+                let width = (corner2.x - corner1.x).abs();
+                let height = (corner2.y - corner1.y).abs();
+                width * height
+            }
         }
         // END SOLUTION
     }
@@ -51,6 +54,16 @@ fn test2() {
     let shape = Shape::Rectangle {
         corner1: ORIGIN,
         corner2: Point::new(5.0, 6.0),
+    };
+    assert_eq!(shape.area(), 30.0);
+}
+
+#[test]
+fn test3() {
+    println!("WTF");
+    let shape = Shape::Rectangle {
+        corner1: ORIGIN,
+        corner2: Point::new(-5.0, 6.0),
     };
     assert_eq!(shape.area(), 30.0);
 }
