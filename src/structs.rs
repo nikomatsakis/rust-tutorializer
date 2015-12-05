@@ -1,32 +1,50 @@
-#[derive(Copy, Clone, Debug)]
-struct Point {
-    x: f32,
-    y: f32,
+#![allow(dead_code)]
+
+use std::collections::HashMap;
+
+struct Store {
+    name: String,
+    prices: HashMap<String, f32>,
 }
 
-impl Point {
-    fn new(x: f32, y: f32) -> Point {
-        Point { x: x, y: y }
+impl Store {
+    fn new(name: String) -> Store {
+        Store {
+            name: name,
+            prices: HashMap::new(),
+        }
     }
 
-    fn shift(&mut self, x: f32, y: f32) {
-        self.x += x;
-        self.y += y;
+    fn add_item(&mut self, name: String, price: f32) {
+        self.prices.insert(name, price);
     }
 
-    fn distance(&self, p: Point) -> f32 {
-        (p.x - self.x).abs() + (p.y - self.y).abs()
+    fn price(&self, item_name: &str) -> f32 {
+        self.prices[item_name]
+    }
+
+    fn total_price(&self, shopping_list: &[String]) -> f32 {
+        // START SOLUTION
+        shopping_list.iter()
+                     .map(|name| self.price(name))
+                     .fold(0.0, |a, b| a + b)
+        // END SOLUTION
     }
 }
 
-const ORIGIN: Point = Point {
-    x: 0.0,
-    y: 0.0,
-};
+fn build_store() -> Store {
+    let mut store = Store::new(format!("Rustmart"));
+    store.add_item(format!("chocolate"), 5.0);
+    store.add_item(format!("socks"), 23.0);
+    store.add_item(format!("plush Mozilla dinosaur"), 13.0);
+    store
+}
 
 #[test]
-fn distance1() {
-    let p1 = Point::new(1.0, 1.0);
-    assert_eq!(ORIGIN.distance(p1), 1.0_f32.sqrt());
+fn total_price() {
+    let store = build_store();
+    let list = vec![format!("chocolate"),
+                    format!("plush Mozilla dinosaur")];
+    assert_eq!(store.total_price(&list), 18.0);
 }
 
