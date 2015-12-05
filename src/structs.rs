@@ -24,6 +24,7 @@ impl Store {
     }
 
     fn total_price(&self, shopping_list: &[String]) -> f32 {
+        // PROMPT 0.0 // TODO
         // START SOLUTION
         shopping_list.iter()
                      .map(|name| self.price(name))

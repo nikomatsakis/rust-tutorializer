@@ -7,6 +7,7 @@ from urllib import urlencode
 href = re.compile(r'href="src/([a-z_]+).rs"')
 start_solution = re.compile(r' *// START SOLUTION$')
 end_solution = re.compile(r' *// END SOLUTION$')
+prompt = re.compile(r'// PROMPT ')
 
 def replace(mo):
     path = mo.group(1)
@@ -24,6 +25,7 @@ def replace(mo):
         elif end_solution.match(line):
             raise "Unmatched END SOLUTION in %s" % Path
         else:
+            line = prompt.sub("", line)
             output_lines.append(line)
     file_contents = '\n'.join(output_lines)
     query = urlencode({"version": "stable", "code": file_contents})
