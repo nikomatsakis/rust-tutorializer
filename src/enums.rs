@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 
+#[derive(Debug)]
 struct Store {
     name: String,
     items: Vec<Item>,
@@ -10,6 +11,13 @@ struct Item {
     name: &'static str,
     price: f32,
     quantity: u32,
+    tax_rate: TaxRate,
+}
+
+#[derive(Debug)]
+enum TaxRate {
+    TaxExempt,
+    SalesTax(f32),
 }
 
 impl Store {
@@ -27,7 +35,17 @@ impl Store {
     fn price(&self, item_name: &str) -> f32 {
         for item in &self.items {
             if item.name == item_name {
-                return item.price;
+                let base_price = item.price;
+                // PROMPT // TODO Adjust for the tax
+                // PROMPT return base_price;
+                // START SOLUTION
+                return match item.tax_rate {
+                    TaxRate::TaxExempt =>
+                        base_price,
+                    TaxRate::SalesTax(percent) =>
+                        base_price + base_price * percent,
+                };
+                // END SOLUTION
             }
         }
 
@@ -45,10 +63,27 @@ impl Store {
 }
 
 fn build_store() -> Store {
+    use self::TaxRate::*;
+
     let mut store = Store::new(format!("Rustmart"));
-    store.add_item(Item { name: "chocolate", price: 5.0, quantity: 15 });
-    store.add_item(Item { name: "socks", price: 23.0, quantity: 3 });
-    store.add_item(Item { name: "plush Mozilla dinosaur", price: 13.0, quantity: 2 });
+    store.add_item(Item {
+        name: "chocolate",
+        price: 5.0,
+        quantity: 15,
+        tax_rate: TaxExempt,
+    });
+    store.add_item(Item {
+        name: "socks",
+        price: 23.0,
+        quantity: 3,
+        tax_rate: SalesTax(0.05),
+    });
+    store.add_item(Item {
+        name: "plush Mozilla dinosaur",
+        price: 13.0,
+        quantity: 2,
+        tax_rate: SalesTax(0.05),
+    });
     store
 }
 
@@ -56,6 +91,6 @@ fn build_store() -> Store {
 fn total_price() {
     let store = build_store();
     let list = vec!["chocolate", "plush Mozilla dinosaur"];
-    assert_eq!(store.total_price(&list), 18.0);
+    assert_eq!(store.total_price(&list), 18.65);
 }
 
