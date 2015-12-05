@@ -8,8 +8,8 @@ This page is at <http://smallcultfollowing.com/20151209>.
 - [Borrowing](src/borrowing.rs):
     - Goal: convert this code to use borrowing instead so that it compiles
     - Time: 3 minutes
-- [Basics](src/basics.rs)
-    - Goal: implement the `area` function
+- [Structs](src/structs.rs)
+    - Goal: convert `distance` to compute the correct value
     - Time: 10 minutes
 
 Thank you for coming to the tutorial! Before you go, please let me

@@ -6,4 +6,4 @@ index.html: index-template.md sync-index.py $(wildcard src/*rs)
 	markdown index-template.md | python sync-index.py > index.html
 
 test:
-	rustc --test src/basics.rs -o src/basics && src/basics
+	rustc --test src/structs.rs -o src/structs && src/structs
