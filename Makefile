@@ -8,3 +8,4 @@ index.html: index-template.md sync-index.py $(wildcard src/*rs)
 test:
 	rustc --test src/structs.rs -o src/structs.exe && src/structs.exe
 	rustc --test src/enums.rs -o src/enums.exe && src/enums.exe
+	rustc --test src/options.rs -o src/options.exe && src/options.exe

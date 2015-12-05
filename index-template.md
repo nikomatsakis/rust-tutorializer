@@ -14,6 +14,9 @@ This page is at <http://smallcultfollowing.com/20151209>.
 - [Enums](src/enums.rs)
     - Goal: adjust the `price` method to account for taxation
     - Time: 10 minutes
+- [Option and Result](src/options.rs)
+    - Goal: adjust the `total_price` method to account for price being fallible
+    - Time: 10 minutes
 
 Thank you for coming to the tutorial! Before you go, please let me
 know what you thought at
