@@ -11,6 +11,9 @@ This page is at <http://smallcultfollowing.com/20151209>.
 - [Structs](src/structs.rs)
     - Goal: implement `total_price` method
     - Time: 10 minutes
+- [Enums](src/enums.rs)
+    - Goal: adjust the `price` method to account for taxation
+    - Time: 10 minutes
 
 Thank you for coming to the tutorial! Before you go, please let me
 know what you thought at

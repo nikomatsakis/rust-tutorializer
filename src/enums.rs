@@ -36,7 +36,7 @@ impl Store {
         for item in &self.items {
             if item.name == item_name {
                 let base_price = item.price;
-                // PROMPT // TODO Adjust for the tax
+                // PROMPT // TODO Adjust for `item.tax_rate`
                 // PROMPT return base_price;
                 // START SOLUTION
                 return match item.tax_rate {
@@ -53,12 +53,9 @@ impl Store {
     }
 
     fn total_price(&self, shopping_list: &[&str]) -> f32 {
-        // PROMPT 0.0 // TODO
-        // START SOLUTION
         shopping_list.iter()
                      .map(|name| self.price(name))
                      .fold(0.0, |a, b| a + b)
-        // END SOLUTION
     }
 }
 
