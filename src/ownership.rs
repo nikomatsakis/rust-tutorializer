@@ -1,11 +1,6 @@
 fn main() {
     let name = format!("Firefox");
-    let name = remove_vowels(name);
-    println!("Removing vowels yields {:?}", remove_vowels(name));
-    // Goal #2: Convert so that it prints `Removing vowels from
-    // "Firefox" yields "Frfx"` instead.
-    //
-    // Extra bonus: Can you do it without copying any data?
+    print_out(name);
 }
 
 fn remove_vowels(name: String) -> String {
@@ -25,4 +20,17 @@ fn remove_vowels(name: String) -> String {
         }
     }
     output
+}
+
+fn print_out(name: String) -> String {
+    let devowelized_name = remove_vowels(name);
+    println!("Removing vowels yields {:?}", devowelized_name);
+
+    // Goal #2: What happens when you uncomment the following
+    // line? Can you change the code above so that this next line?
+    // println!("Removing vowels from {:?} yields {:?}",
+    //          name, devowelized_name);
+
+    // Extra credit: Can you do it without copying any data?
+    // (Using only ownership transfer)
 }

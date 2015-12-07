@@ -17,3 +17,9 @@
         - What goes wrong now?
     - Timing notes: ~30 minutes from start to here
 - Exercise
+
+
+- Timing
+  - Intro: ~5 min
+  - Hello world: ~5 min
+  - 3:42 - 3:53

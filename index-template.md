@@ -8,7 +8,7 @@ This page is at <http://smallcultfollowing.com/20151209>.
 - [Ownership](src/ownership.rs):
     - Goal #1: Get code to compile
     - Goal #2: Convert so that it prints *Removing vowels from "Firefox" yields "Frfx"*.
-    - Extra bonus: Can you do it without copying any data?
+    - Extra credit: Can you do it without copying any data?
     - Time: 5 minutes
 - [Borrowing](src/borrowing.rs):
     - Goal: convert `strcat` function so that it uses borrowing, not ownership.
