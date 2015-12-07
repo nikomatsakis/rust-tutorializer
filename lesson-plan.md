@@ -1,0 +1,19 @@
+- Hello, World Example:
+    - Explain:
+        - `fn` declaration
+        - `println` is a macro
+    - Format strings in `println!`
+        - `println("Hello, {}!", world);`
+        - also show `{:?}`
+    - Move "world" into a local variable so we can change it
+        - `let name = "fellow Rustaceans"; println("Hello, {}!", name);`
+    - Abstract into a helper fn
+        - `fn greet(name: String) { println("Hello, {}!", name); }`
+        - What goes wrong?
+            - Explain `format!`, show how you can use same helpers
+            - Explain `push_str` and mutable local variables
+                - `let mut name = format!("fellow "); name.push_str("Rustacean");`
+    - Call helper fn twice
+        - What goes wrong now?
+    - Timing notes: ~30 minutes from start to here
+- Exercise

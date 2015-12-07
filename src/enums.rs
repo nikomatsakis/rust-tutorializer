@@ -36,7 +36,12 @@ impl Store {
         for item in &self.items {
             if item.name == item_name {
                 let base_price = item.price;
-                // PROMPT // TODO Adjust for `item.tax_rate`
+                // Goal 1. Adjust for `item.tax_rate`
+                //
+                // Goal 2. Once you have things working, try removing
+                // one of the arms in your `match` expression and
+                // see what happens.
+
                 // PROMPT return base_price;
                 // START SOLUTION
                 return match item.tax_rate {
