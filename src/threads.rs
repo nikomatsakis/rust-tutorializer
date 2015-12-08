@@ -43,18 +43,49 @@ impl Store {
     }
 }
 
-fn build_store() -> Store {
+fn build_store() -> Vec<Store> {
+    let mut stores = vec![];
+
     let mut store = Store::new(format!("Rustmart"));
     store.add_item(Item { name: "chocolate", price: 5.0 });
     store.add_item(Item { name: "socks", price: 23.0 });
     store.add_item(Item { name: "plush Mozilla dinosaur", price: 13.0 });
-    store
+    stores.push(store);
+
+    let mut store = Store::new(format!("Rarget"));
+    store.add_item(Item { name: "chocolate", price: 2.5 });
+    store.add_item(Item { name: "socks", price: 20.0 });
+    store.add_item(Item { name: "plush Mozilla dinosaur", price: 20.0 });
+    stores.push(store);
+
+    stores
 }
 
-#[test]
-fn total_price() {
-    let store = build_store();
-    let list = vec!["chocolate", "plush Mozilla dinosaur"];
-    assert_eq!(store.total_price(&list), 18.0);
+fn main() {
+    let stores = build_stores();
+
+    let shopping_list = vec!["chocolate", "plush Mozilla dinosaur"];
+    let shopping_list = Arc::new(shopping_list);
+
+    let mut futures = vec![];
+    for store in stores {
+        let shopping_list = shopping_list.clone();
+        futures.push(thread::spawn(move || {
+            let sum = store.total_price(&shopping_list);
+            (store.name, sum)
+        }));
+    }
+
+    let mut best = None;
+    let mut best_price = INFINITY;
+    for future in futures {
+        let (name, sum) = future.join().unwrap();
+        println!("At {}, I would spend ${}.", name, sum);
+        if sum < best_price {
+            best = Some(name);
+        }
+    }
+
+    println!("--> Go to {}!", best.unwrap());
 }
 

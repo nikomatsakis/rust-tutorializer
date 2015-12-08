@@ -10,7 +10,6 @@ struct Store {
 struct Item {
     name: &'static str,
     price: f32,
-    quantity: u32,
     tax_rate: TaxRate,
 }
 
@@ -71,19 +70,16 @@ fn build_store() -> Store {
     store.add_item(Item {
         name: "chocolate",
         price: 5.0,
-        quantity: 15,
         tax_rate: TaxExempt,
     });
     store.add_item(Item {
         name: "socks",
         price: 23.0,
-        quantity: 3,
         tax_rate: SalesTax(0.05),
     });
     store.add_item(Item {
         name: "plush Mozilla dinosaur",
         price: 13.0,
-        quantity: 2,
         tax_rate: SalesTax(0.05),
     });
     store

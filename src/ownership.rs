@@ -22,7 +22,7 @@ fn remove_vowels(name: String) -> String {
     output
 }
 
-fn print_out(name: String) -> String {
+fn print_out(name: String) {
     let devowelized_name = remove_vowels(name);
     println!("Removing vowels yields {:?}", devowelized_name);
 

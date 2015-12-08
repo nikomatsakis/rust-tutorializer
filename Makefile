@@ -10,3 +10,4 @@ test:
 	rustc --test src/structs.rs -o src/structs.exe && src/structs.exe
 	rustc --test src/enums.rs -o src/enums.exe && src/enums.exe
 	rustc --test src/options.rs -o src/options.exe && src/options.exe
+	rustc src/threads.rs -o src/threads.exe && src/threads.exe
