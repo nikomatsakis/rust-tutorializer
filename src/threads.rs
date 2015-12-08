@@ -1,5 +1,9 @@
 #![allow(dead_code)]
 
+use std::f32::INFINITY;
+use std::sync::Arc;
+use std::thread;
+
 struct Store {
     name: String,
     items: Vec<Item>,
@@ -43,7 +47,7 @@ impl Store {
     }
 }
 
-fn build_store() -> Vec<Store> {
+fn build_stores() -> Vec<Store> {
     let mut stores = vec![];
 
     let mut store = Store::new(format!("Rustmart"));
@@ -83,6 +87,7 @@ fn main() {
         println!("At {}, I would spend ${}.", name, sum);
         if sum < best_price {
             best = Some(name);
+            best_price = sum;
         }
     }
 
