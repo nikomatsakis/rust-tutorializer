@@ -17,11 +17,11 @@ This page is at <http://smallcultfollowing.com/20151209>.
 - [Structs](src/structs.rs)
     - Goal: implement `total_price` method
     - Time: 10 minutes
-- [Enums](src/enums.rs)
-    - Goal: adjust the `price` method to account for taxation
-    - Time: 10 minutes
-- [Option and Result](src/options.rs)
-    - Goal: adjust the `total_price` method to account for price being fallible
+- [Threads](src/threads.rs)
+    - Goal: join the threads and print out the store with the best price
+    - Extra credit #1: use channels instead
+    - Extra credit #2: or, instead of channels, use a mutex to compute the best price in
+      the parallel threads themselves
     - Time: 10 minutes
 
 Thank you for coming to the tutorial! Before you go, please let me

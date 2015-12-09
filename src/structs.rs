@@ -23,22 +23,28 @@ impl Store {
         self.items.push(item);
     }
 
-    fn price(&self, item_name: &str) -> f32 {
+    fn price(&self, item_name: &str) -> Option<f32> {
         for item in &self.items {
             if item.name == item_name {
-                return item.price;
+                return Some(item.price);
             }
         }
-
-        panic!("no such item {:?}", item_name);
+        None
     }
 
-    fn total_price(&self, shopping_list: &[&str]) -> f32 {
-        // PROMPT 0.0 // TODO
+    fn total_price(&self, shopping_list: &[&str]) -> Option<f32> {
+        // Goal: compute the total price of all items in the shopping
+        // list. If any of the options are not present, return `None`.
+        // PROMPT 0.0
         // START SOLUTION
-        shopping_list.iter()
-                     .map(|name| self.price(name))
-                     .fold(0.0, |a, b| a + b)
+        let mut sum = 0.0;
+        for name in shopping_list {
+            match self.price(name) {
+                Some(v) => sum += v,
+                None => return None
+            }
+        }
+        Some(sum)
         // END SOLUTION
     }
 }
@@ -55,6 +61,13 @@ fn build_store() -> Store {
 fn total_price() {
     let store = build_store();
     let list = vec!["chocolate", "plush Mozilla dinosaur"];
-    assert_eq!(store.total_price(&list), 18.0);
+    assert_eq!(store.total_price(&list), Some(18.0));
+}
+
+#[test]
+fn total_price_missing() {
+    let store = build_store();
+    let list = vec!["chocolate", "plush Mozilla dinosaur", "fork and knife"];
+    assert_eq!(store.total_price(&list), None);
 }
 
