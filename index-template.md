@@ -1,5 +1,7 @@
 ## Rust Tutorial
 
+The slides are available at <http://www.slideshare.net/nikomatsakis/rust-mozlando-tutorial>.
+
 This page is at <http://smallcultfollowing.com/20151209>.
 
 - [Hello World](src/hello_world.rs):
@@ -13,7 +15,7 @@ This page is at <http://smallcultfollowing.com/20151209>.
 - [Borrowing](src/borrowing.rs):
     - Goal: convert `strcat` function so that it uses borrowing, not ownership.
     - Question: 
-    - Time: 5 minutes
+    - Time: 10 minutes
 - [Structs](src/structs.rs)
     - Goal: implement `total_price` method
     - Time: 10 minutes
@@ -27,3 +29,4 @@ This page is at <http://smallcultfollowing.com/20151209>.
 Thank you for coming to the tutorial! Before you go, please let me
 know what you thought at
 [this Google form](http://goo.gl/forms/TTjkyPcF6i).
+

@@ -38,12 +38,9 @@ impl Store {
     }
 
     fn total_price(&self, shopping_list: &[&str]) -> f32 {
-        // PROMPT 0.0 // TODO
-        // START SOLUTION
         shopping_list.iter()
                      .map(|name| self.price(name))
                      .fold(0.0, |a, b| a + b)
-        // END SOLUTION
     }
 }
 
