@@ -71,10 +71,10 @@ fn main() {
     let shopping_list = vec!["chocolate", "plush Mozilla dinosaur"];
     let shopping_list = Arc::new(shopping_list);
 
-    let mut futures = vec![];
+    let mut handles = vec![];
     for store in stores {
         let shopping_list = shopping_list.clone();
-        futures.push(thread::spawn(move || {
+        handles.push(thread::spawn(move || {
             let sum = store.total_price(&shopping_list);
             (store.name, sum)
         }));
@@ -82,14 +82,19 @@ fn main() {
 
     let mut best = None;
     let mut best_price = INFINITY;
-    for future in futures {
-        let (name, sum) = future.join().unwrap();
+
+    // Goal: join the threads here!
+    // Extra credit: rewrite to use channels or mutexes.
+    // START SOLUTION
+    for handle in handles {
+        let (name, sum) = handle.join().unwrap();
         println!("At {}, I would spend ${}.", name, sum);
         if sum < best_price {
             best = Some(name);
             best_price = sum;
         }
     }
+    // END SOLUTION
 
     println!("--> Go to {}!", best.unwrap());
 }

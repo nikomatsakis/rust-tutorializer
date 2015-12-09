@@ -26,4 +26,4 @@ This page is at <http://smallcultfollowing.com/20151209>.
 
 Thank you for coming to the tutorial! Before you go, please let me
 know what you thought at
-[this Google form](http://goo.gl/forms/CN4trE3rXe).
+[this Google form](http://goo.gl/forms/TTjkyPcF6i).
