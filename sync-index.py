@@ -8,6 +8,13 @@ href = re.compile(r'href="src/([a-z_]+).rs"')
 start_solution = re.compile(r' *// START SOLUTION$')
 end_solution = re.compile(r' *// END SOLUTION$')
 prompt = re.compile(r'// PROMPT ')
+home_url_placeholder = "http://home.url"
+
+if len(sys.argv) <= 1:
+    sys.stderr.write("Missing home-url argument\n");
+    sys.exit(1)
+
+home_url = sys.argv[1]
 
 def replace(mo):
     path = mo.group(1)
@@ -26,12 +33,14 @@ def replace(mo):
             raise "Unmatched END SOLUTION in %s" % Path
         else:
             line = prompt.sub("", line)
+            line = line.replace(home_url_placeholder, home_url)
             output_lines.append(line)
     file_contents = '\n'.join(output_lines)
     query = urlencode({"version": "stable", "code": file_contents})
     return 'href="https://play.rust-lang.org/?%s"' % query
                             
 for line in sys.stdin:
-    line2 = href.sub(replace, line)
-    sys.stdout.write(line2)
+    line = href.sub(replace, line)
+    line = line.replace(home_url_placeholder, home_url)
+    sys.stdout.write(line)
     

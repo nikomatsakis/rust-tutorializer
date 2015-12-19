@@ -16,3 +16,5 @@ only need to read from `suffix`.
 
 Note that the return value has also changed: since we are going to be
 mutating `prefix` in place, we no longer need to return anything.
+
+[Back to the exercise.](src/borrowing.rs)

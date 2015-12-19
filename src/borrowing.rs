@@ -23,8 +23,7 @@ fn join_words(mut prefix: String, suffix: String) -> String {
 // take ownership of `suffix`.
 //
 // Hint: If you'd like a hint as to how to proceed, open
-// <http://smallcultfollowing.com/rust-tutorials/hint-borrowing-1.html>
-// in a new tab.
+// <http://home.url/hint-borrowing-1.html>.
 
 // Question: Now that you've converted `strcat`, what happens if you
 // call `strcat` using the same string for `prefix` and `suffix`?
