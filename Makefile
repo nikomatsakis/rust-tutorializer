@@ -1,9 +1,13 @@
 .PHONY: test
 
-all: test index.html
+all: clean test html/index.html html/hint-borrowing-1.html
 
-index.html: index-template.md sync-index.py $(wildcard src/*rs)
-	markdown index-template.md | python sync-index.py > index.html
+clean:
+    rm -f html/*.html
+    rm src/*.exe
+
+html/%.html: md/%.md sync-index.py $(wildcard src/*rs)
+	markdown $< | python sync-index.py > $@
 
 test:
 	rustc src/ownership.rs -o src/ownership.exe && src/ownership.exe

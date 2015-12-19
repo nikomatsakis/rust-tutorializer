@@ -1,19 +1,30 @@
 pub fn main() {
-    let str1 = format!("fellow ");
-    let str2 = format!("Rustaceans");
-    let str3 = strcat(str1, str2);
-    println!("{}", str3);
+    let (mut str1, str) = two_words();
+    str1 = join_words(str1, str2);
+    println!("concatenated string is {:?}", str1);
 }
 
+fn two_words() -> (String, String) {
+    (format!("fellow"), format!("Rustaceans"))
+}
+
+
 /// Concatenate `suffix` onto the end of `prefix`.
-fn strcat(mut prefix: String, suffix: String) -> String {
+fn join_words(mut prefix: String, suffix: String) -> String {
+    prefix.push(' '); // separate the words with a space
     for ch in suffix.chars() {
         prefix.push(ch);
     }
     prefix
 }
 
-// Challenge: Convert `strcat` to use borrowing, not ownership.
+// Challenge: Convert `join_words` to use borrowing, not ownership.
+// The new function should mutate `prefix` in place, and should not
+// take ownership of `suffix`.
+//
+// Hint: If you'd like a hint as to how to proceed, open
+// <http://smallcultfollowing.com/rust-tutorials/hint-borrowing-1.html>
+// in a new tab.
 
 // Question: Now that you've converted `strcat`, what happens if you
 // call `strcat` using the same string for `prefix` and `suffix`?

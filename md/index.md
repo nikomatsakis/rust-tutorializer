@@ -12,8 +12,9 @@ This page is at <http://smallcultfollowing.com/20151209>.
     - Time: 10 minutes
 - [Borrowing](src/borrowing.rs):
     - Goal: convert `strcat` function so that it uses borrowing, not ownership.
-    - Question: 
-    - Time: 5 minutes
+    - Hint: Getting the syntax just right can be a bit tricky if you've never done
+      any Rust before. If you need a hint, [click here](hint-borrowing-1.html).
+    - Time: 10 minutes
 - [Structs](src/structs.rs)
     - Goal: implement `total_price` method
     - Time: 10 minutes
