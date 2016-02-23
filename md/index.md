@@ -12,7 +12,8 @@ FYI: This page is at <http://home.url>.
     - Time: 3 minutes
 - [Ownership](src/ownership.rs):
     - Goal #1: Get code to compile
-    - Goal #2: Convert so that it prints *Removing vowels from "Firefox" yields "Frfx"*.
+    - Goal #2: Convert so that it prints the original string before removing vowels
+      as well as the "devowelized" version.
     - Extra credit: Can you do it without copying any data?
     - Time: 10 minutes
 - [Borrowing](src/borrowing.rs):
