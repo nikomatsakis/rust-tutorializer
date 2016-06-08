@@ -16,11 +16,15 @@ FYI: This page is at <http://home.url>.
       as well as the "devowelized" version.
     - Extra credit: Can you do it without copying any data?
     - Time: 10 minutes
-- [Borrowing](src/borrowing.rs):
+- [Shared borrows](src/shared-borrow.rs):
+    - Goal #1: Convert code to use borrowing, not cloning.
+    - Goal #2: Use slices to print "Hello, friend" and not "Hello, my friend".
+    - Time: 10 minutes
+- [Mutable borrows](src/mutable-borrow.rs):
     - Goal: convert `strcat` function so that it uses borrowing, not ownership.
-    - [Hint:](hint-borrowing-1.html) Getting the syntax just right can
+    - [Hint:](hint-mutable-borrow-1.html) Getting the syntax just right can
       be a bit tricky if you've never done any Rust
-      before. [If you need a hint, click here](hint-borrowing-1.html).
+      before. [If you need a hint, click here](hint-mutable-borrow-1.html).
     - Time: 10 minutes
 - [Structs](src/structs.rs)
     - Goal: implement `total_price` method

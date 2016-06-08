@@ -4,7 +4,7 @@ import sys
 import re
 from urllib import urlencode
 
-href = re.compile(r'href="src/([a-z_]+).rs"')
+href = re.compile(r'href="src/([-a-z_]+).rs"')
 start_solution = re.compile(r' *// START SOLUTION$')
 end_solution = re.compile(r' *// END SOLUTION$')
 prompt = re.compile(r'// PROMPT ')

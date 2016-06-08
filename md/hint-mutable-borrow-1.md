@@ -1,8 +1,8 @@
-### Hint for the "Borrowing" exercise
+### Hint for the "Mutable Borrowing" exercise
 
 You want to change the signature of `join_words` as follows:
 
-```rust
+```
 fn strcat(prefix: &mut String, suffix: &String) {
     ...
 }
@@ -17,4 +17,4 @@ only need to read from `suffix`.
 Note that the return value has also changed: since we are going to be
 mutating `prefix` in place, we no longer need to return anything.
 
-[Back to the exercise.](src/borrowing.rs)
+[Back to the exercise.](src/mutable-borrow.rs)
