@@ -44,5 +44,5 @@ FYI: This page is at <http://home.url>.
 ### Advanced Lifetimes
 
 - [Named lifetime parameters](src/named_lifetime_parameters.rs):
-    - Exercises are listed at the bottom of the source code.
+    - Exercises are listed in the source code.
     - Ensure you are using **Nightly builds** for the best error messages.

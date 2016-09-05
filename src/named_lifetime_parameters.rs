@@ -1,5 +1,15 @@
 #![allow(warnings)]
 
+// **Exercise 1.** Modify the signature of `get` to use an explicit
+// lifetime name in the return type.
+//
+// **Exercise 2.** Change the signature of `get` to:
+//
+//     fn get<'a>(&'a mut self, key: &'a K) -> Option<&'a V>
+//
+// - Which test fails to compile?
+// - Can you explain why?
+
 pub struct Map<K: Eq, V> {
     elements: Vec<(K, V)>,
 }
@@ -45,13 +55,3 @@ fn lock_receiver() {
     let r = map.get(&'a');
     assert_eq!(r, Some(&string));
 }
-
-// **Exercise 1.** Modify the signature of `get` to use an explicit
-// lifetime name in the return type.
-//
-// **Exercise 2.** Change the signature of `get` to:
-//
-//     fn get<'a>(&'a mut self, key: &'a K) -> Option<&'a V>
-//
-// - Which test fails to compile?
-// - Can you explain why?
