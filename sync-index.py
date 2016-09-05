@@ -36,7 +36,7 @@ def replace(mo):
             line = line.replace(home_url_placeholder, home_url)
             output_lines.append(line)
     file_contents = '\n'.join(output_lines)
-    query = urlencode({"version": "stable", "code": file_contents})
+    query = urlencode({"version": "nightly", "code": file_contents})
     return 'href="https://play.rust-lang.org/?%s"' % query
                             
 for line in sys.stdin:
