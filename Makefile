@@ -35,3 +35,6 @@ test:
 	rustc --test src/enums.rs -o src/enums.exe && src/enums.exe
 	rustc --test src/options.rs -o src/options.exe && src/options.exe
 	rustc src/threads.rs -o src/threads.exe && src/threads.exe
+	rustc --test src/named_lifetime_parameters.rs -o src/named_lifetime_parameters.exe && src/named_lifetime_parameters.exe
+
+

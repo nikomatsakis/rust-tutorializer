@@ -7,6 +7,8 @@ helps me to improve the tutorials for others. Thanks. --nmatsakis
 
 FYI: This page is at <http://home.url>.
 
+### Ownership and Borrowing
+
 - [Hello World](src/hello_world.rs):
     - Goal: make it greet you by name
     - Time: 3 minutes
@@ -29,6 +31,9 @@ FYI: This page is at <http://home.url>.
 - [Structs](src/structs.rs)
     - Goal: implement `total_price` method
     - Time: 10 minutes
+
+### Traits and Threads
+
 - [Threads](src/threads.rs)
     - Goal: join the threads and print out the store with the best price
     - Extra credit #1: use channels instead
@@ -36,3 +41,8 @@ FYI: This page is at <http://home.url>.
       the parallel threads themselves
     - Time: 10 minutes
 
+### Advanced Lifetimes
+
+- [Named lifetime parameters](src/named_lifetime_parameters.rs):
+    - Exercises are listed at the bottom of the source code.
+    - Ensure you are using **Nightly builds** for the best error messages.
