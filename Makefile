@@ -36,5 +36,7 @@ test:
 	rustc --test src/options.rs -o src/options.exe && src/options.exe
 	rustc src/threads.rs -o src/threads.exe && src/threads.exe
 	rustc --test src/named_lifetime_parameters.rs -o src/named_lifetime_parameters.exe && src/named_lifetime_parameters.exe
+	rustc --test src/entry.rs -o src/entry.exe && src/entry.exe
+	rustc --test src/lifetimes_as_part_of_type.rs -o src/lifetimes_as_part_of_type.exe && src/lifetimes_as_part_of_type.exe
 
 

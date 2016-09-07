@@ -9,6 +9,8 @@
 //
 // - Which test fails to compile?
 // - Can you explain why?
+//
+// **Exercise 3.** Rewrite `insert` to not just push.
 
 pub struct Map<K: Eq, V> {
     elements: Vec<(K, V)>,
@@ -23,7 +25,7 @@ impl<K: Eq, V> Map<K, V> {
         self.elements.push((key, value));
     }
 
-    pub fn get(&mut self, key: &K) -> Option<&V> {
+    pub fn get(&self, key: &K) -> Option<&V> {
         self.elements.iter().rev().find(|pair| pair.0 == *key).map(|pair| &pair.1)
     }
 }

@@ -43,6 +43,10 @@ FYI: This page is at <http://home.url>.
 
 ### Advanced Lifetimes
 
+- Ensure you are using **Nightly builds** for the best error messages.
+- Exercises are listed in the source code.
+
 - [Named lifetime parameters](src/named_lifetime_parameters.rs):
-    - Exercises are listed in the source code.
-    - Ensure you are using **Nightly builds** for the best error messages.
+- [Lifetimes as part of the type](src/lifetimes_as_part_of_type.rs):
+- [Successful borrowing](src/successful_borrowing.rs):
+
