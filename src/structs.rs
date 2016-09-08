@@ -7,7 +7,7 @@ struct Store {
 
 #[derive(Debug)]
 struct Item {
-    name: &'static str,
+    name: String,
     price: f32,
 }
 
@@ -35,7 +35,11 @@ impl Store {
     fn total_price(&self, shopping_list: &[&str]) -> Option<f32> {
         // Goal: compute the total price of all items in the shopping
         // list. If any of the options are not present, return `None`.
-        // PROMPT 0.0
+        //
+        // Hint: If you'd like a hint as to how to proceed, open
+        // <http://home.url/hint-struct-1.html>.
+
+        // PROMPT Some(0.0)
         // START SOLUTION
         let mut sum = 0.0;
         for name in shopping_list {
@@ -51,9 +55,9 @@ impl Store {
 
 fn build_store() -> Store {
     let mut store = Store::new(format!("Rustmart"));
-    store.add_item(Item { name: "chocolate", price: 5.0 });
-    store.add_item(Item { name: "socks", price: 23.0 });
-    store.add_item(Item { name: "plush Mozilla dinosaur", price: 13.0 });
+    store.add_item(Item { name: format!("chocolate"), price: 5.0 });
+    store.add_item(Item { name: format!("socks"), price: 23.0 });
+    store.add_item(Item { name: format!("plush Mozilla dinosaur"), price: 13.0 });
     store
 }
 

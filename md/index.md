@@ -30,6 +30,8 @@ FYI: This page is at <http://home.url>.
     - Time: 10 minutes
 - [Structs](src/structs.rs)
     - Goal: implement `total_price` method
+    - [Hint: Here is an outline of what
+      the function should do, if you get stuck.](hint-struct-1.html)
     - Time: 10 minutes
 
 ### Traits and Threads
@@ -49,4 +51,5 @@ FYI: This page is at <http://home.url>.
 - [Named lifetime parameters](src/named_lifetime_parameters.rs):
 - [Lifetimes as part of the type](src/lifetimes_as_part_of_type.rs):
 - [Successful borrowing](src/successful_borrowing.rs):
+- [Lifetimes in structs](src/entry.rs):
 
