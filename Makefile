@@ -40,5 +40,8 @@ test:
 	rustc --test src/successful_borrowing.rs -o src/successful_borrowing.exe && src/successful_borrowing.exe
 	rustc --test src/entry.rs -o src/entry.exe && src/entry.exe
 	rustc --test src/sharing_and_mutability.rs -o src/sharing_and_mutability.exe && src/sharing_and_mutability.exe
+	rustc --test src/traits.rs -o src/traits.exe && src/traits.exe
+	rustc --test src/defaults.rs -o src/defaults.exe && src/defaults.exe
+	rustc src/layering.rs -o src/layering.exe && src/layering.exe
 
 
