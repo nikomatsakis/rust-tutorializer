@@ -21,6 +21,9 @@ FYI: This page is at <http://home.url>.
       be a bit tricky if you've never done any Rust
       before. [If you need a hint, click here](hint-mutable-borrow-1.html).
     - Time: 10 minutes
+    
+### Structs and such
+
 - [Structs](src/structs.rs)
     - [Hint: Here is an outline of what
       the function should do, if you get stuck.](hint-struct-1.html)
@@ -36,7 +39,6 @@ FYI: This page is at <http://home.url>.
     - Extra credit #2: or, instead of channels, use a mutex to compute the best price in
       the parallel threads themselves
     - Time: 10 minutes
-
 
 ### Advanced Lifetimes
 
