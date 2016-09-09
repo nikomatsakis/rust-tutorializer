@@ -26,11 +26,11 @@ def replace(mo):
             if end_solution.match(line):
                 state = 'keep'
             elif start_solution.match(line):
-                raise "Unmatched START SOLUTION in %s" % path
+                raise Exception("Unmatched START SOLUTION in %s" % path)
         elif start_solution.match(line):
             state = 'skip'
         elif end_solution.match(line):
-            raise "Unmatched END SOLUTION in %s" % Path
+            raise Exception("Unmatched END SOLUTION in %s" % path)
         else:
             line = prompt.sub("", line)
             line = line.replace(home_url_placeholder, home_url)
