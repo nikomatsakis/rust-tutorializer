@@ -7,7 +7,7 @@ helps me to improve the tutorials for others. Thanks. --nmatsakis
 
 FYI: This page is at <http://home.url>.
 
-### Ownership and Borrowing
+### Beginner tutorial: Ownership and Borrowing
 
 - [Hello World](src/hello_world.rs):
     - Time: 3 minutes
@@ -21,15 +21,12 @@ FYI: This page is at <http://home.url>.
       be a bit tricky if you've never done any Rust
       before. [If you need a hint, click here](hint-mutable-borrow-1.html).
     - Time: 10 minutes
-    
-### Structs and such
-
 - [Structs](src/structs.rs)
     - [Hint: Here is an outline of what
       the function should do, if you get stuck.](hint-struct-1.html)
     - Time: 10 minutes
 
-### Traits and Threads
+### Intermediate tutorial: Traits and Threads
 
 - [Traits](src/traits.rs)
 - [Defaults](src/defaults.rs)
@@ -40,7 +37,7 @@ FYI: This page is at <http://home.url>.
       the parallel threads themselves
     - Time: 10 minutes
 
-### Advanced Lifetimes
+### Advanced tutorial: More lifetimes
 
 - Ensure you are using **Nightly builds** for the best error messages.
 - Exercises are listed in the source code.
