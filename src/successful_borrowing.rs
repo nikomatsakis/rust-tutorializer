@@ -27,3 +27,5 @@ impl<K: Eq, V> Map<K, V> {
     }
 }
 
+fn main() {
+}

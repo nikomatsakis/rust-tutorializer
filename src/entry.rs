@@ -15,7 +15,7 @@
 // - `fn remove(self) -> (NotFoundEntry<'map, K, V>, V)`
 //
 // You can uncomment the test `exercise_2` to see how they should be
-// used.
+// used. This will break `exercise_1`, so comment that one out.
 
 pub struct Map<K: Eq, V> {
     elements: Vec<(K, V)>,

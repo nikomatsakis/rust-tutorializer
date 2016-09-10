@@ -1,6 +1,6 @@
 #![allow(warnings)]
 
-// **Exercise 1.** For the method `get`, identify at least 4 lifetimes
+// **Exercise 1.** For the body of `get`, identify at least 4 lifetimes
 // that must be inferred.
 //
 // **Exercise 2.** Modify the signature of `get` such that the method
