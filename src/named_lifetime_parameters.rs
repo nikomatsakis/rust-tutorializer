@@ -5,12 +5,12 @@
 //
 // **Exercise 2.** Change the signature of `get` to:
 //
-//     fn get<'a>(&'a mut self, key: &'a K) -> Option<&'a V>
+//     fn get<'a>(&'a self, key: &'a K) -> Option<&'a V>
 //
 // - Which test fails to compile?
 // - Can you explain why?
 //
-// **Exercise 3.** Rewrite `insert` to not just push.
+// **Exercise 3.** Rewrite `insert` to not just push, but also ensure `key` is unique.
 
 pub struct Map<K: Eq, V> {
     elements: Vec<(K, V)>,
