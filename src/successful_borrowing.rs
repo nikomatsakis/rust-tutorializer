@@ -1,5 +1,7 @@
 #![allow(warnings)]
 
+// Goal #1: Eliminate the borrow check error in the `remove` method.
+
 pub struct Map<K: Eq, V> {
     elements: Vec<(K, V)>,
 }
