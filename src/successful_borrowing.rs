@@ -29,3 +29,11 @@ impl<K: Eq, V> Map<K, V> {
     }
 }
 
+
+#[test]
+fn foo() {
+    let mut map = Map::new();
+    map.insert(22, "hi");
+    map.insert(44, "you");
+    map.remove(&22);
+}

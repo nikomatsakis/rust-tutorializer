@@ -3,12 +3,12 @@
 
 # Directory where the `index.html` will be loaded. Any reference to
 # `http://home.url` is changed to this string.
-HOME_URL ?= http://rust-tutorials.com/ECOOP17SS/
+HOME_URL ?= http://rust-tutorials.com/RustConf17/
 
 # Path to give to `scp` for uploading the tutorials. This is an alias
 # that I define locally, so I am pretty confident you will want to
 # change it.
-UPLOAD_PATH ?= scf:rust-tutorials.com/ECOOP17SS/
+UPLOAD_PATH ?= scf:rust-tutorials.com/RustConf17/
 
 ###########################################################################
 # Make rules themselves.

@@ -7,10 +7,13 @@
 //
 //     fn get<'a>(&'a mut self, key: &'a K) -> Option<&'a V>
 //
-// - Which test fails to compile?
+// - Which test(s) fails to compile?
 // - Can you explain why?
 //
-// **Exercise 3.** Rewrite `insert` to not just push.
+// **Exercise 3.** Rewrite `insert` so that it doesn't just push
+// a tuple onto `self.elements`, but instead searches to see if there
+// is already an entry with that same key and, if so, overwrites that
+// entry in place.
 
 pub struct Map<K: Eq, V> {
     elements: Vec<(K, V)>,
@@ -56,4 +59,22 @@ fn lock_receiver() {
     map.insert('a', string.clone());
     let r = map.get(&'a');
     assert_eq!(r, Some(&string));
+}
+
+#[test]
+fn overwrites_len() {
+    let mut map = Map::new();
+    map.insert('a', format!("alpha"));
+    map.insert('b', format!("beta"));
+    map.insert('a', format!("alpha2"));
+
+    assert_eq!(map.get(&'a'), Some(&format!("alpha2")));
+    assert_eq!(map.get(&'b'), Some(&format!("beta")));
+
+    // Here we break the abstraction barrier and observe that
+    // `insert()` is appending even if an entry with the given key
+    // already exists. When you complete exercise 3, this assertion
+    // should fail, and you will have to change it to assert that the
+    // length is only 2.
+    assert_eq!(map.elements.len(), 3);
 }
