@@ -1,9 +1,6 @@
-## Rust Tutorial
+## Rust Tutorial Exercises
 
-Thank you for working through these tutorials! I hope you like
-them. Before you finish, please let me know what you thought at
-[this Google form](http://goo.gl/forms/TTjkyPcF6i) -- your feedback
-helps me to improve the tutorials for others. Thanks. --nmatsakis
+From ECOOP 2017 Summer School.
 
 FYI: This page is at <http://home.url>.
 

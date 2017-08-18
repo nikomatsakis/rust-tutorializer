@@ -1,5 +1,5 @@
 pub fn main() {
-    let (mut str1, str) = two_words();
+    let (mut str1, str2) = two_words();
     str1 = join_words(str1, str2);
     println!("concatenated string is {:?}", str1);
 }
@@ -22,8 +22,8 @@ fn join_words(mut prefix: String, suffix: String) -> String {
 // take ownership of `suffix`.
 //
 // Hint: If you'd like a hint as to how to proceed, open
-// <http://home.url/hint-mutable-borrow-1.html>.
+// <http://home.url/hint/mutable_borrow_1/>.
 
-// Question: Now that you've converted `strcat`, what happens if you
-// call `strcat` using the same string for `prefix` and `suffix`?
+// Question: Now that you've converted `join_words`, what happens if you
+// call `join_words` using the same string for `prefix` and `suffix`?
 // Why?
